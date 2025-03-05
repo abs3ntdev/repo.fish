@@ -1,5 +1,5 @@
 function _repo_goto
-    if test -z "$argv[1]"
+    if not set -q argv[1]; or test -z "$argv[1]"
         echo "Error: Repository path is required"
         return 1
     end

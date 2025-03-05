@@ -1,5 +1,5 @@
 function _repo_clone
-    if test -z "$argv[2]"
+    if not set -q argv[2]; or test -z "$argv[2]"
         echo "Error: Repository path is required"
         return 1
     end
@@ -13,7 +13,7 @@ function _repo_clone
     mkdir -p "$trimmed"
 
     if not test -d "$trimmed/.git"
-        set repourl (echo "$repo_prefix@$cleaned" | sed -e "s/\//:/1")
+        set repourl (string replace --max=1 "/" ":" "$repo_prefix@$cleaned")
         echo "Cloning $repourl to $trimmed..."
         git clone "$repourl" "$trimmed"
     else

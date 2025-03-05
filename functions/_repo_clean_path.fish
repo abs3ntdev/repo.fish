@@ -7,7 +7,7 @@ function _repo_clean_path
         end
     end
 
-    set stripped (echo $stripped | sed -e "s/:/\//1")
+    set stripped (string replace --max=1 ":" "/" $stripped)
 
     if not string match -q "*/*" $stripped
         set stripped "github.com/$stripped"
