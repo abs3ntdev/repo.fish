@@ -29,7 +29,7 @@ function __repo_using_command
 end
 
 function __repo_list_repos
-    find "$REPO_BASE_DIR" -type d -name ".git" | path dirname | sort | path basename
+    find "$REPO_BASE_DIR" -type d -name ".git" -printf "%h\n" 2>/dev/null | sed 's|.*/||; s/\./_/g'
 end
 
 # Main command completions
