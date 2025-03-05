@@ -48,7 +48,7 @@ repo help
 
 ### Configuration
 
-By default, all repositories are stored in `~/repos`. You can change this by setting the `$REPO_BASE_DIR` variable in your `config.fish`:
+By default, all repositories are stored in `$HOME/repos`. You can change this by setting the `$REPO_BASE_DIR` variable in your `config.fish`:
 
 ```fish
 set -gx REPO_BASE_DIR ~/path/to/repos
