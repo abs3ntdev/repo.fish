@@ -1,13 +1,5 @@
 function __repo_commands
-    echo "get\tClone a repository"
-    echo "open\tOpen the repository in a browser"
-    echo "aur\tClone an AUR repository"
-    echo "list\tList all repositories"
-    echo "go\tNavigate to a repository"
-    echo "goto\tNavigate to a repository"
-    echo "new\tCreate a new repository"
-    echo "create\tCreate a new repository"
-    echo "help\tShow help message"
+    echo get open aur list go goto new create help
 end
 
 function __repo_needs_command
@@ -18,4 +10,12 @@ function __repo_needs_command
     return 1
 end
 
-complete -f -c repo -n __repo_needs_command -a '(__repo_commands)'
+complete -f -c repo -n __repo_needs_command -a get -d "Clone a repository"
+complete -f -c repo -n __repo_needs_command -a open -d "Open the repository in a browser"
+complete -f -c repo -n __repo_needs_command -a aur -d "Clone an AUR repository"
+complete -f -c repo -n __repo_needs_command -a list -d "List all repositories"
+complete -f -c repo -n __repo_needs_command -a go -d "Navigate to a repository"
+complete -f -c repo -n __repo_needs_command -a goto -d "Navigate to a repository"
+complete -f -c repo -n __repo_needs_command -a new -d "Create a new repository"
+complete -f -c repo -n __repo_needs_command -a create -d "Create a new repository"
+complete -f -c repo -n __repo_needs_command -a help -d "Show help message"
