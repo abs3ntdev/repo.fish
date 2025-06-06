@@ -1,5 +1,5 @@
 function __repo_commands
-    echo get open aur list go goto new create help
+    echo get open aur list go goto new create worktree help
 end
 
 function __repo_needs_command
@@ -18,6 +18,7 @@ complete -f -c repo -n __repo_needs_command -a go -d "Navigate to a repository"
 complete -f -c repo -n __repo_needs_command -a goto -d "Navigate to a repository"
 complete -f -c repo -n __repo_needs_command -a new -d "Create a new repository"
 complete -f -c repo -n __repo_needs_command -a create -d "Create a new repository"
+complete -f -c repo -n __repo_needs_command -a worktree -d "Create a worktree for current repository"
 complete -f -c repo -n __repo_needs_command -a help -d "Show help message"
 
 complete -f -c repo -s w -l worktree -d "Create a worktree with the specified name"

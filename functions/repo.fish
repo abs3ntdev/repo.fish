@@ -35,6 +35,8 @@ function repo
             _repo_goto $arg
         case new create
             _repo_new $arg
+        case worktree
+            _repo_worktree $arg
         case '*'
             echo "Unknown command: $cmd"
             _repo_help
