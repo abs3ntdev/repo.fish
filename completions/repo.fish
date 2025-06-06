@@ -19,3 +19,6 @@ complete -f -c repo -n __repo_needs_command -a goto -d "Navigate to a repository
 complete -f -c repo -n __repo_needs_command -a new -d "Create a new repository"
 complete -f -c repo -n __repo_needs_command -a create -d "Create a new repository"
 complete -f -c repo -n __repo_needs_command -a help -d "Show help message"
+
+complete -f -c repo -s w -l worktree -d "Create a worktree with the specified name"
+complete -f -c repo -s h -l help -d "Show help message"

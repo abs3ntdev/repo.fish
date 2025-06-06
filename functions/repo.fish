@@ -1,5 +1,5 @@
 function repo
-    argparse h/help -- $argv
+    argparse h/help w/worktree= -- $argv
     or begin
         _repo_help
         return 1
@@ -20,7 +20,11 @@ function repo
 
     switch $cmd
         case get
-            _repo_clone git $arg
+            if set -q _flag_worktree
+                _repo_clone git $arg --worktree $_flag_worktree
+            else
+                _repo_clone git $arg
+            end
         case aur
             _repo_clone aur $arg
         case open
